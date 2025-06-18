@@ -25,12 +25,13 @@ public class UsuarioRol implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario_rol")
     private Integer idUsuarioRol;
     @ManyToOne
-    @JoinColumn(name = "rolIdRol")
+    @JoinColumn(name = "rol_id_rol")
     private Rol rolIdRol;
     @ManyToOne
-    @JoinColumn(name = "usuarioIdUsuario")
+    @JoinColumn(name = "usuario_id_usuario")
     private Usuario usuarioIdUsuario;
 
     public UsuarioRol() {

@@ -29,6 +29,11 @@ public class NivelAcademicoFacade implements NivelAcademicoFacadeLocal {
     }
 
     public List<NivelAcademico> findAll() {
-        return em.createNamedQuery("NivelAcademico.findAll", NivelAcademico.class).getResultList();
+        List<NivelAcademico> a;
+
+        a = em.createNamedQuery("NivelAcademico.findAll", NivelAcademico.class).getResultList();
+
+        System.out.println(a);
+        return a;
     }
 }

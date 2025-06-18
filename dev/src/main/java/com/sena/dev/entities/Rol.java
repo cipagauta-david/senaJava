@@ -27,9 +27,11 @@ public class Rol implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol")
     private Integer idRol;
     @NotNull
     @Size(min = 1, max = 100)
+    @Column(name = "nombre_rol")
     private String nombreRol;
     @NotNull
     @Size(min = 1, max = 65535)

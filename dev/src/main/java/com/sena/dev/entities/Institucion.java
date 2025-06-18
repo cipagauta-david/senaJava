@@ -27,6 +27,7 @@ public class Institucion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_institucion")
     private Integer idInstitucion;
     @NotNull
     @Size(min = 1, max = 100)

@@ -27,9 +27,11 @@ public class Grupo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_grupo")
     private Integer idGrupo;
     @NotNull
     @Size(min = 1, max = 100)
+    @Column(name = "nombre_grupo")
     private String nombreGrupo;
     @Size(max = 65535)
     private String descripcion;

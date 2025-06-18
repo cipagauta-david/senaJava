@@ -27,6 +27,7 @@ public class NivelAcademico implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_nivel_academico")
     private Integer idNivelAcademico;
     @NotNull
     @Size(min = 1, max = 100)

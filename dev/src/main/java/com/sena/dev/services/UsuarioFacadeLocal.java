@@ -12,5 +12,5 @@ public interface UsuarioFacadeLocal {
     Usuario find(Object id);
     List<Usuario> findAll();
 
-    Usuario iniciarSesion(String usuario, String password);
+    Usuario iniciarSesion(String email, String password);
 }

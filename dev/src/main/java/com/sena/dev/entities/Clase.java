@@ -28,6 +28,7 @@ public class Clase implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_clase")
     private Integer idClase;
     @NotNull
     @Size(min = 1, max = 100)
@@ -42,13 +43,13 @@ public class Clase implements Serializable {
     @NotNull
     private Time horaFin;
     @ManyToOne
-    @JoinColumn(name = "aulaIdAula")
+    @JoinColumn(name = "aula_id_aula")
     private Aula aulaIdAula;
     @ManyToOne
-    @JoinColumn(name = "grupoIdGrupo")
+    @JoinColumn(name = "grupo_id_grupo")
     private Grupo grupoIdGrupo;
     @ManyToOne
-    @JoinColumn(name = "periodoAcademicoIdPeriodoAcademico")
+    @JoinColumn(name = "periodo_academico_id_periodo_academico")
     private PeriodoAcademico periodoAcademicoIdPeriodoAcademico;
 
     public Clase() {

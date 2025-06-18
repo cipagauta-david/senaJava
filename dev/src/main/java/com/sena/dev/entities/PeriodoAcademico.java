@@ -27,9 +27,11 @@ public class PeriodoAcademico implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_periodo_academico")
     private Integer idPeriodoAcademico;
     @NotNull
     @Size(min = 1, max = 100)
+    @Column(name = "nombre_periodo")
     private String nombrePeriodo;
     @NotNull
     @Size(min = 1, max = 8)

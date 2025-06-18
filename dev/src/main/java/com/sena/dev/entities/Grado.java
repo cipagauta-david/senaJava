@@ -27,6 +27,7 @@ public class Grado implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_grado")
     private Integer idGrado;
     @NotNull
     @Size(min = 1, max = 50)
@@ -34,7 +35,7 @@ public class Grado implements Serializable {
     @Size(max = 65535)
     private String descripcion;
     @ManyToOne
-    @JoinColumn(name = "nivelAcademico")
+    @JoinColumn(name = "nivel_academico_id")
     private NivelAcademico nivelAcademico;
     @OneToMany(mappedBy = "gradoIdGrado", cascade = CascadeType.ALL)
     private Set<Usuario> usuarioCollection;

@@ -45,13 +45,13 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuarioIdUsuario", cascade = CascadeType.ALL)
     private Set<UsuarioRol> usuarioRolCollection;
     @ManyToOne
-    @JoinColumn(name = "gradoIdGrado")
+    @JoinColumn(name = "grado_id_grado")
     private Grado gradoIdGrado;
     @ManyToOne
-    @JoinColumn(name = "grupoIdGrupo")
+    @JoinColumn(name = "grupo_id_grupo")
     private Grupo grupoIdGrupo;
     @ManyToOne
-    @JoinColumn(name = "institucionIdInstitucion")
+    @JoinColumn(name = "institucion_id_institucion")
     private Institucion institucionIdInstitucion;
 
     public Usuario() {

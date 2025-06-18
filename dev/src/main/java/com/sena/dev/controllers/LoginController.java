@@ -21,7 +21,7 @@ import javax.faces.application.FacesMessage;
  */
 @Named(value = "login")
 @SessionScoped
-public class Login implements Serializable {
+public class LoginController implements Serializable {
 
     private String usuario;
     private String contrasenna;
@@ -30,7 +30,7 @@ public class Login implements Serializable {
     @EJB
     private UsuarioFacadeLocal ufl;
     
-    public Login() {
+    public LoginController() {
     }
     
     public String iniciarSesion() {
@@ -50,10 +50,10 @@ public class Login implements Serializable {
         // System.out.println("Intentando iniciar sesión con usuario: " + usuario + " y contraseña: " + contrasenna);
         // if ("admin".equals(usuario) && "admin123".equals(contrasenna)) {
         //     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("login", this);
-        //     System.out.println("Login exitoso, redirigiendo a welcome.xhtml");
+        //     System.out.println("LoginController exitoso, redirigiendo a welcome.xhtml");
         //     return "welcome?faces-redirect=true";
         // } else {
-        //     System.out.println("Login fallido");
+        //     System.out.println("LoginController fallido");
         //     FacesContext.getCurrentInstance().addMessage(null,
         //         new FacesMessage(FacesMessage.SEVERITY_ERROR, usuario+contrasenna, 
         //         "Usuario o contraseña incorrectos"));

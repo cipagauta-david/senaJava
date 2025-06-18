@@ -30,11 +30,20 @@ public class Filtro implements Filter {
         String loginURI = req.getContextPath() + "/login.xhtml";
         String resourceURI = req.getRequestURI();
 
-        HttpSession session = req.getSession(false);
-        boolean loggedIn = (session != null && session.getAttribute("login") != null
-                && ((com.sena.dev.controllers.Login) session.getAttribute("login")).getUsuario() != null);
-
         boolean loginRequest = resourceURI.endsWith("login.xhtml") || resourceURI.contains("javax.faces.resource");
+
+        HttpSession session = req.getSession(false);
+        boolean loggedIn = false;
+        if (session != null && session.getAttribute("login") != null) {
+            Object loginObj = session.getAttribute("login");
+            try {
+                loggedIn = ((com.sena.dev.controllers.LoginController) loginObj).getUsuario() != null;
+            } catch (Exception e) {
+                loggedIn = false;
+            }
+        }
+
+        System.out.println("Filtro: resourceURI=" + resourceURI + ", loginRequest=" + loginRequest + ", loggedIn=" + loggedIn);
 
         if (loggedIn || loginRequest) {
             chain.doFilter(request, response);
